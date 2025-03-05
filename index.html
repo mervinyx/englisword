@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单词消消乐 - 趣味背单词游戏</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>单词消消乐</h1>
+            <div class="game-info">
+                <div class="level">关卡: <span id="current-level">1</span></div>
+                <div class="score">得分: <span id="score">0</span></div>
+                <div class="timer">时间: <span id="timer">00:00</span></div>
+            </div>
+        </header>
+
+        <div class="game-intro" id="game-intro">
+            <h2>欢迎来到单词消消乐!</h2>
+            <p>连接英文单词和对应的中文含义，正确匹配后它们会消失。</p>
+            <p>第1关：5个单词</p>
+            <p>第2关：10个单词</p>
+            <p>每关单词量是上一关的2倍！</p>
+            <button id="start-game" class="btn">开始游戏</button>
+        </div>
+
+        <div class="level-complete hidden" id="level-complete">
+            <h2>恭喜！</h2>
+            <p>你完成了第<span id="completed-level">1</span>关</p>
+            <div class="level-stats">
+                <div>用时: <span id="level-time">00:00</span></div>
+                <div>得分: <span id="level-score">0</span></div>
+            </div>
+            <button id="next-level" class="btn">下一关</button>
+        </div>
+
+        <div class="game-over hidden" id="game-over">
+            <h2>游戏结束</h2>
+            <p>最终得分: <span id="final-score">0</span></p>
+            <button id="restart-game" class="btn">重新开始</button>
+        </div>
+
+        <div class="game-board hidden" id="game-board">
+            <div class="words-container" id="words-container">
+                <!-- Words will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+    <audio id="wrong-sound" src="sounds/wrong.mp3" preload="auto"></audio>
+    <audio id="level-complete-sound" src="sounds/level-complete.mp3" preload="auto"></audio>
+
+    <script src="js/words.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
